@@ -17,7 +17,7 @@ export class DonationsProvider {
     }
 
     getDonations() {
-        return new Promise(resolve => {
+        return new Promise<any>(resolve => {
             var donationsUrl = this.urlServiceProvider.build('/donation/findDonations');
             let opt:RequestOptions;
             let headers:Headers = new Headers;

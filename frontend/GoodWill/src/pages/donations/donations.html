@@ -22,7 +22,7 @@ Ionic pages and navigation.
         <ion-card-header *ngIf="donation?.item">{{ donation.item | titlecase }} - ${{ donation.price }}</ion-card-header>
         <ion-card-content>
             <span *ngIf="donation?.location"><ion-icon name="pin"></ion-icon> {{ donation.location }}</span>
-            <span *ngIf="donation?.date">{{ donation.date | timeAgo }}</span>
+            <ion-note *ngIf="donation?.date">{{ donation.date | timeAgo }}</ion-note>
         </ion-card-content>
     </ion-card>
 
