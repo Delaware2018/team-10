@@ -40,8 +40,9 @@ public class DonationController {
     public void generate(){
         String [] types = {"shirt", "shorts", "jeans", "dresses", "pillow", "dresser w/mirror", "lamp", "monitor", "puzzles", "shoes"};
         float [] prices = {2.99f, 3.99f, 4.99f, 5.99f, 2.99f, 39.99f, 3.99f, 2.99f, 0.99f, 4.99f };
-        long [] numbers = {(long)1111111111, (long)2222222222.0, (long) 3333333333.0, (long) 4444444444.0, (long) 5555555555.0};
-        Date[] dates = { new Date("09/21/18"), new Date("05/20/18"), new Date("09/27/18")};
+        long [] numbers = {(long)4015551234.0, (long)4015551235.0, (long) 4015551236.0, (long) 4015551237.0, (long) 4015551238.0};
+        Date[] dates = { new Date("09/21/18"), new Date("05/20/18"), new Date("09/27/18"), new Date("04/17/18"), new Date("08/13/18")
+                new Date("06/04/18"), new Date("07/19/18"), new Date("03/30/18")};
 
         for (int i=0; i<30; i++) {
             int rand = (int) (Math.random()*9);
