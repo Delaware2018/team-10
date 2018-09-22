@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DonationsProvider } from '../providers/donations/donations';
     StoriesPage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

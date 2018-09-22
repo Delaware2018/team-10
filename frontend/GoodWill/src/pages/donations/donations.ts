@@ -9,13 +9,13 @@ import { DonationsProvider } from '../../providers/donations/donations';
 })
 export class DonationsPage {
 
-    donations = {};
+    donations = Array();
 
     constructor(public navCtrl: NavController, public donationsProvider: DonationsProvider) {
         this.donationsProvider.getDonations()
         .then(data=> {
-            console.log(data);
             this.donations = data;
+            console.log(this.donations);
         })
     }
 
