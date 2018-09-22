@@ -17,6 +17,10 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping(path = "/test")
+    public String test() {
+        return "hello";
+    }
     @PostMapping(path = "/create")
     public void createUser(@RequestBody User user) {
         userRepository.save(user);
