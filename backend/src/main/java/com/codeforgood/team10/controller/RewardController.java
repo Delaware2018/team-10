@@ -42,6 +42,11 @@ public class RewardController {
         rewardRepository.save(reward);
     }
 
+    @GetMapping(path="/get")
+    public List<Reward> getRewards() {
+        return rewardRepository.findAll();
+    }
+
     public List<Reward> findAll() {
         return rewardRepository.findAll();
     }
