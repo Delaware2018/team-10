@@ -21,7 +21,7 @@ export class LoginPage {
 		fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
-			email: ['', Validators.compose([Validators.required, Validators.email])],
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 		});
 	}
@@ -29,15 +29,15 @@ export class LoginPage {
   login() {
 		// let data = this.loginForm.value;
         //
-		// if (!data.email) {
+		// if (!data.phoneNumber) {
 		// 	return;
 		// }
         //
 		// let credentials = {
-		// 	email: data.email,
+		// 	phoneNumber: data.phoneNumber,
 		// 	password: data.password
 		// };
-		// this.auth.signInWithEmail(credentials)
+		// this.auth.signInWithPhonenumber(credentials)
 		// 	.then(
 		// 		() => this.navCtrl.setRoot(HomePage),
 		// 		error => this.loginError = error.message
