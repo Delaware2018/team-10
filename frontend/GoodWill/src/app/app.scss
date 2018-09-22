@@ -16,6 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 $color-primary: #144788;
+$color-ltblue: #266bc1;
 
 @mixin background-image {
     background-image: url('../assets/imgs/background.jpeg');
@@ -25,4 +26,41 @@ $color-primary: #144788;
     .content-ios {
         background-color: rgba(20, 71, 136, 0.9);
     }
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: #144788;
+    text-align: center;
+}
+
+#donateButton {
+    float: right;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    &:hover {
+        background-color: darken($color-primary, 20%);
+        color: white;
+    }
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 80px;
 }

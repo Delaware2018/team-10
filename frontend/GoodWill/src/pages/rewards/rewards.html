@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-    <h3>Rewards</h3>
-  </ion-col>
-  <ion-col>
-    <button class="button button2" ion-button (click)="donate()">Donate</button>
-  </ion-col>
-    </ion-row>
-  </ion-grid>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h3>Rewards</h3>
+                </ion-col>
+                <ion-col>
+                    <button id="donateButton" ion-button (click)="donate()">Donate</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
@@ -45,4 +45,9 @@
         </ion-slide>
 
     </ion-slides>
+    <footer>
+        <button ion-button icon-left block clear (click)="redeem()">
+            <strong>REDEEM</strong>
+        </button>
+    </footer>
 </ion-content>
