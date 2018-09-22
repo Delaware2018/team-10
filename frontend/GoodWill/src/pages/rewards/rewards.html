@@ -1,30 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-    <h3>Rewards</h3>
-  </ion-col>
-  <ion-col>
-    <button class="button button2" ion-button (click)="donate()">Donate</button>
-  </ion-col>
-    </ion-row>
-  </ion-grid>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h3>Rewards</h3>
+                </ion-col>
+                <ion-col>
+                    <button id="donateButton" ion-button (click)="donate()">Donate</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
     <ion-slides pager text-center>
 
-        <ion-slide>
-            <h2>Earn 125 more points to earn a giftcard!</h2>
+        <ion-slide *ngFor="let reward of rewards">
+            <h2 *ngIf="reward?.name">{{reward.name}}</h2>
             <img class="bordered" src="../assets/imgs/giftcard.png">
             <ion-grid>
                 <ion-row>
                     <ion-col col-12>
-                        <circle-progress
-                        [percent]="85"
-                        [maxPercent]="200"
+                        <circle-progress *ngIf="reward?.cost"
+                        [percent]="profile.points"
+                        [maxPercent]="reward.cost"
                         [radius]="100"
                         [outerStrokeWidth]="16"
                         [innerStrokeWidth]="0"
@@ -45,4 +45,9 @@
         </ion-slide>
 
     </ion-slides>
+    <footer>
+        <button ion-button icon-left block clear (click)="redeem()">
+            <strong>REDEEM</strong>
+        </button>
+    </footer>
 </ion-content>
