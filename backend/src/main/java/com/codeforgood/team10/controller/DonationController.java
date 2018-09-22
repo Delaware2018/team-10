@@ -13,14 +13,14 @@ import java.util.ArrayList;
 
 
 @RestController
-@RequestMapping(path="/Donation")
+@RequestMapping(path="/donation")
 public class DonationController {
 
     @Autowired
     private DonationRepository donationRepository;
 
-    @PostMapping(path="/createDonation")
-    public void createUser(@RequestBody Donation donation) {
+    @PostMapping(path="/create")
+    public void create(@RequestBody Donation donation) {
         donationRepository.save(donation);
     }
 
