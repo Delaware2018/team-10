@@ -24,18 +24,13 @@ export class LoginPage {
 		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
-
-			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
-
-			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
         })
     }
 
 
   login() {
-
 		// let data = this.loginForm.value;
         //
 		// if (!data.phoneNumber) {
@@ -52,16 +47,6 @@ export class LoginPage {
 		// 		error => this.loginError = error.message
 		// 	);
         this.navCtrl.push(TabsPage);
-
-      // 4085551234
-      try {
-          let phone = this.loginForm.value.phone;
-          this.urlServiceProvider.setPhoneNumber(phone);
-          this.navCtrl.push(TabsPage);
-      } catch(error) {
-          console.log(error);
-      }
-
     }
 
   signup(){

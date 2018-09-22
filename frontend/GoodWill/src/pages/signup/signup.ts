@@ -17,12 +17,12 @@ export class SignupPage {
     	// private auth: AuthService
 	) {
 		this.form = fb.group({
-
-			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
-
-			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-
-			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			email: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			dob: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			income: ['', Validators.compose([Validators.required, Validators.minLength(0)])],
+			familySize: ['', Validators.compose([Validators.required, Validators.minLength(2)])]
 		});
 		// this.form.valid = false;
   }

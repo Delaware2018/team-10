@@ -5,11 +5,7 @@
 	<form (ngSubmit)="login()" [formGroup]="loginForm">
 		<ion-list inset>
 			<ion-item>
-<<<<<<< HEAD
 				<ion-input type="text" placeholder="Phone Number" formControlName="phoneNumber"></ion-input>
-=======
-					<ion-input [(ngModel)]="profile.phoneNumber" type="number" placeholder="Phone Number" formControlName="phone"></ion-input>
->>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
 			</ion-item>
 
 			<ion-item>
@@ -19,9 +15,6 @@
 
 		<div padding-horizontal>
 
-<<<<<<< HEAD
-			<button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
-=======
 			<button ion-button full type="submit" (click)="login(phoneNumber)">Log in</button>
 			<div class="login-footer">
 				<p>
@@ -29,10 +22,6 @@
 					If you're a new user, please sign up.
 				</p>
 			</div>
-
-			<ion-list>
->>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
-
 		</div>
 	</form>
 	<footer>

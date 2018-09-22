@@ -1,13 +1,11 @@
-<ion-header>
-	<ion-navbar>
-		<ion-title>Sign up</ion-title>
-	</ion-navbar>
-</ion-header>
+
 
 <ion-content>
 
 	<form (ngSubmit)="signup()" [formGroup]="form">
 		<ion-list inset>
+
+			<h1>Registration</h1>
 
 			<ion-item>
 				<ion-input type="text" placeholder="Phone number" formControlName="phoneNumber"></ion-input>
@@ -16,6 +14,42 @@
 			<ion-item>
 				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
 			</ion-item>
+
+			<ion-item>
+				<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-input type="date" placeholder="Date of Birth" formControlName="dob"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-input type="text" placeholder="Income" formControlName="income"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-input type="text" placeholder="Family Size" formControlName="familySize"></ion-input>
+			</ion-item>
+
+			<ion-row radio-group [(formGroup)]="form">
+		     <ion-col>
+		       <ion-item>
+		         Do you own any pets?
+		       </ion-item>
+		     </ion-col>
+		     <ion-col>
+		       <ion-item>
+		         <ion-label>Yes</ion-label>
+		         <ion-radio value="yes"></ion-radio>
+		       </ion-item>
+		     </ion-col>
+		     <ion-col>
+		       <ion-item>
+		        <ion-label>No</ion-label>
+		         <ion-radio value="no"></ion-radio>
+		       </ion-item>
+		     </ion-col>
+		   </ion-row>
 
 		</ion-list>
 
