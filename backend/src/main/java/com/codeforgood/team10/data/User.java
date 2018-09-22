@@ -21,6 +21,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long phoneNumber;
+    private String password;
     private String email;
     private String firstName;
     private String lastName;
@@ -30,6 +31,7 @@ public class User {
     private String ethnicity;
     private int familySize;
     private boolean pet;
+    private int points = 0;
 
     public User () {}
 
@@ -43,6 +45,7 @@ public class User {
         this.ethnicity = ethnicity;
         this.familySize = familySize;
         this.pet = pet;
+        this.points = 0;
     }
 
     public long getId() {
@@ -123,5 +126,21 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
