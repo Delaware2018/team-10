@@ -24,11 +24,15 @@ export class LoginPage {
 		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
 =======
 			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
 >>>>>>> 0d4eaa1cc5388e7db4f34f60f7a33fe89f56c010
+=======
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+>>>>>>> Stashed changes
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
         })
     }
