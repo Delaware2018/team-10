@@ -24,7 +24,7 @@ public class User {
     private String email;
     private String firstName;
     private String lastName;
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern="MM/dd/yyyy")
     private Date dateOfBirth;
     private String income;
     private String ethnicity;

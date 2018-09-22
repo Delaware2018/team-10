@@ -14,7 +14,7 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String location;
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern="MM/dd/yyyy")
     private Date date;
     private long userID;
     private String item;
