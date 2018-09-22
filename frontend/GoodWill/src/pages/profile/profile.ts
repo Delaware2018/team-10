@@ -18,6 +18,14 @@ export class ProfilePage {
           this.profile = data;
       })
   }
+
+  ionViewDidEnter() {
+      this.userProvider.getProfile()
+      .then(data=> {
+          console.log(data);
+          this.profile = data;
+      })
+  }
   donate(){
       this.navCtrl.push(MakeDonationPage);
   }

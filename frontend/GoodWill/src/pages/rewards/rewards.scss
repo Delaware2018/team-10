@@ -1,14 +1,16 @@
 page-rewards {
     @include background-image;
-    circle-progress {
-        position: absolute;
-        right: 50%;
-        transform: translate(50%, -50%);
+    img {
+        position: relative;
+        top: -75px;
+        max-width: 100px;
     }
-    // button,
-    // .button-ios,
-    // .button-md {
-    //     background-color: #FFFFFF;
-    //     color: $color-primary;
-    // }
+    circle-progress {
+        text {
+            font-size: 30px;
+        }
+        tspan {
+            fill: $color-white;
+        }
+    }
 }

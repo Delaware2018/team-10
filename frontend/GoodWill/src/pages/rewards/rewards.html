@@ -17,37 +17,36 @@
     <ion-slides pager text-center>
 
         <ion-slide *ngFor="let reward of rewards">
-            <h2 *ngIf="reward?.name">{{reward.name}}</h2>
+            <h1 *ngIf="reward?.name">{{reward.name}}</h1>
+            <circle-progress *ngIf="reward?.cost"
+            [percent]="profile.points"
+            [maxPercent]="reward.cost"
+            [radius]="50"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#FFFFFF'"
+            [animation]="true"
+            [animationDuration]="500"
+            [showSubtitle]="false"
+            [showUnits]="false"
+            ></circle-progress>
+            <br /><br /><br /><br /><br />
             <img class="bordered" src="../assets/imgs/giftcard.png">
             <ion-grid>
                 <ion-row>
                     <ion-col col-12>
-                        <circle-progress *ngIf="reward?.cost"
-                        [percent]="profile.points"
-                        [maxPercent]="reward.cost"
-                        [radius]="100"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="0"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="500"
-                        ></circle-progress>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-12>
-                        <button ion-button (click)="redeem()">Redeem</button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
 
+            <footer>
+                <button ion-button icon-left block clear (click)="redeem(reward.cost)">
+                    <strong>REDEEM</strong>
+                </button>
+            </footer>
         </ion-slide>
 
     </ion-slides>
-    <footer>
-        <button ion-button icon-left block clear (click)="redeem()">
-            <strong>REDEEM</strong>
-        </button>
-    </footer>
+
 </ion-content>
