@@ -17,7 +17,7 @@ export class SignupPage {
     	// private auth: AuthService
 	) {
 		this.form = fb.group({
-			email: ['', Validators.compose([Validators.required, Validators.email])],
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 		});
 		// this.form.valid = false;
@@ -26,7 +26,7 @@ export class SignupPage {
   signup() {
 		// let data = this.form.value;
 		// let credentials = {
-		// 	email: data.email,
+		// 	phoneNumber: data.phoneNumber,
 		// 	password: data.password
 		// };
 		// this.auth.signUp(credentials).then(
