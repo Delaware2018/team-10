@@ -8,6 +8,7 @@ import { TabsPage } from '../tabs/tabs';
 import { UrlServiceProvider } from '../../providers/url-service/url-service';
 import { UserProvider } from '../../providers/user/user';
 
+
 @IonicPage()
 @Component({
     selector: 'page-login',
@@ -34,7 +35,7 @@ export class LoginPage {
         try {
             let phone = this.loginForm.value.phoneNumber;
             this.urlServiceProvider.setPhoneNumber(phone);
-            this.navCtrl.push(TabsPage);
+            this.navCtrl.setRoot(TabsPage);
         } catch(error) {
             console.log(error);
         }

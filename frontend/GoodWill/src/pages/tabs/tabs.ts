@@ -8,6 +8,7 @@ import { DonationsPage } from '../donations/donations';
 @Component({
   templateUrl: 'tabs.html'
 })
+
 export class TabsPage {
 
   tab1Root = ProfilePage;
@@ -18,4 +19,6 @@ export class TabsPage {
   constructor() {
 
   }
+
+  private firstLoaded: boolean = false;
 }
