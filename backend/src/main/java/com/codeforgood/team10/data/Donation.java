@@ -10,8 +10,7 @@ import java.util.Date;
 
 @Entity
 public class Donation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long id;
     private String location;
     @JsonFormat(pattern="dd/MM/yyyy")
