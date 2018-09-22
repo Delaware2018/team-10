@@ -24,7 +24,7 @@ export class LoginPage {
 		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
-			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
         })
     }
