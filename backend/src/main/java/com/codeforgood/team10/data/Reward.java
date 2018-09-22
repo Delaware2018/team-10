@@ -19,6 +19,7 @@ public class Reward {
     private String name;
     private int cost;
 
+    Reward() {}
     public Reward(String name, int cost) {
         this.name = name;
         this.cost = cost;

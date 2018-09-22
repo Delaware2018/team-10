@@ -33,12 +33,18 @@ public class RewardController {
             userRepository.save(user);
 
             return true;
-    }
+        }
+
 
 
     @PostMapping(path = "/create")
     public void createReward(@RequestBody Reward reward) {
         rewardRepository.save(reward);
+    }
+
+    @GetMapping(path="/get")
+    public List<Reward> getRewards() {
+        return rewardRepository.findAll();
     }
 
     public List<Reward> findAll() {

@@ -1,4 +1,5 @@
 <ion-header>
+<<<<<<< HEAD
   <ion-navbar>
     <ion-grid>
       <ion-row>
@@ -11,22 +12,45 @@
     </ion-row>
   </ion-grid>
   </ion-navbar>
+=======
+    <ion-navbar>
+        <ion-title>
+            Rewards
+        </ion-title>
+    </ion-navbar>
+>>>>>>> fd0bd00ae71c05211db1af2333e13ae264841b7c
 </ion-header>
 
 <ion-content>
-    <ion-slides pager>
+    <ion-slides pager text-center>
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
-    </ion-slide>
+        <ion-slide>
+            <h2>Earn 125 more points to earn a giftcard!</h2>
+            <img class="bordered" src="../assets/imgs/giftcard.png">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12>
+                        <circle-progress
+                        [percent]="85"
+                        [maxPercent]="200"
+                        [radius]="100"
+                        [outerStrokeWidth]="16"
+                        [innerStrokeWidth]="0"
+                        [outerStrokeColor]="'#78C000'"
+                        [innerStrokeColor]="'#C7E596'"
+                        [animation]="true"
+                        [animationDuration]="500"
+                        ></circle-progress>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <button ion-button (click)="redeem()">Redeem</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
+        </ion-slide>
 
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
-    </ion-slide>
-
-  </ion-slides>
+    </ion-slides>
 </ion-content>

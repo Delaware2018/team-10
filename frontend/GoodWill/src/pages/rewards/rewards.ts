@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+<<<<<<< HEAD
 import { DonationsPage } from '../donations/donations';
 import { MakeDonationPage } from '../make-donation/make-donation';
+=======
+import { UserProvider } from '../../providers/user/user';
+import { RewardsProvider } from '../../providers/rewards/rewards';
+>>>>>>> fd0bd00ae71c05211db1af2333e13ae264841b7c
 
 @Component({
   selector: 'page-rewards',
@@ -9,8 +14,32 @@ import { MakeDonationPage } from '../make-donation/make-donation';
 })
 export class RewardsPage {
 
-  constructor(public navCtrl: NavController) {
+    rewards = []
+    profile = {}
 
+  constructor(public navCtrl: NavController, public userProvider : UserProvider, public rewardsProvider: RewardsProvider) {
+      this.rewardsProvider.getRewards()
+      .then(data => {
+          console.log(data);
+          this.rewards = data;
+      })
+
+      this.userProvider.getProfile()
+      .then(data=> {
+          console.log(data);
+          this.profile = data;
+      })
+  }
+
+  redeem(points){
+      this.rewardsProvider.addPoints(-points).then(data=> {
+          this.userProvider.getProfile()
+          .then(data=> {
+              console.log(data);
+              this.profile = data;
+          })
+      })
+      console.log("You redeemed a giftcard");
   }
   donate(){
       this.navCtrl.push(MakeDonationPage);
