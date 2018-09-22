@@ -21,7 +21,8 @@ $color-primary: #144788;
     background-image: url('../assets/imgs/background.jpeg');
     background-position: center;
     ion-content,
-    .content-md {
+    .content-md,
+    .content-ios {
         background-color: rgba(20, 71, 136, 0.9);
     }
 }

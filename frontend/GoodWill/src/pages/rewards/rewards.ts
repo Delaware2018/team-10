@@ -21,7 +21,7 @@ export class RewardsPage {
 
       this.userProvider.getProfile()
       .then(data=> {
-          console.log(data);
+          console.log("profile", data);
           this.profile = data;
       })
   }

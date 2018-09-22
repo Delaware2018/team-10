@@ -9,15 +9,15 @@
 <ion-content>
     <ion-slides pager text-center>
 
-        <ion-slide>
-            <h2>Earn 125 more points to earn a giftcard!</h2>
+        <ion-slide *ngFor="let reward of rewards">
+            <h2 *ngIf="reward?.name">{{reward.name}}</h2>
             <img class="bordered" src="../assets/imgs/giftcard.png">
             <ion-grid>
                 <ion-row>
                     <ion-col col-12>
-                        <circle-progress
-                        [percent]="85"
-                        [maxPercent]="200"
+                        <circle-progress *ngIf="reward?.cost"
+                        [percent]="profile.points"
+                        [maxPercent]="reward.cost"
                         [radius]="100"
                         [outerStrokeWidth]="16"
                         [innerStrokeWidth]="0"
