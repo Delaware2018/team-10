@@ -1,5 +1,6 @@
 package com.codeforgood.team10.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -19,18 +20,24 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private int phoneNumber;
+    private long phoneNumber;
     private String email;
-    @DateTimeFormat(pattern="dd/MM/yyyy")
+    private String firstName;
+    private String lastName;
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date dateOfBirth;
     private String income;
     private String ethnicity;
     private int familySize;
     private boolean pet;
 
-    public User(int phoneNumber, String email, Date dateOfBirth, String income, String ethnicity, int familySize, boolean pet) {
+    public User () {}
+
+    public User(long phoneNumber, String email, String firstName, String lastName, Date dateOfBirth, String income, String ethnicity, int familySize, boolean pet) {
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.income = income;
         this.ethnicity = ethnicity;
@@ -46,11 +53,11 @@ public class User {
         this.id = id;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -100,5 +107,21 @@ public class User {
 
     public void setPet(boolean pet) {
         this.pet = pet;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
