@@ -17,7 +17,7 @@ export class SignupPage {
     	// private auth: AuthService
 	) {
 		this.form = fb.group({
-			email: ['', Validators.compose([Validators.required, Validators.email])],
+			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 		});
 		// this.form.valid = false;

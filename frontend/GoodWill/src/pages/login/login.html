@@ -11,7 +11,7 @@
 	<form (ngSubmit)="login()" [formGroup]="loginForm">
 		<ion-list inset>
 			<ion-item>
-				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+					<ion-input [(ngModel)]="profile.phoneNumber" type="number" placeholder="Phone Number" formControlName="phone"></ion-input>
 			</ion-item>
 
 			<ion-item>
@@ -21,7 +21,7 @@
 
 		<div padding-horizontal>
 
-			<button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
+			<button ion-button full type="submit" (click)="login(phoneNumber)">Log in</button>
 			<div class="login-footer">
 				<p>
 					<a href="#">Forgot password?</a>
