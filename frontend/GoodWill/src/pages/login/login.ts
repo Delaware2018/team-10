@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 // import { AuthService } from '../../services/auth.service';
 import { SignupPage } from '../signup/signup';
 import { TabsPage } from '../tabs/tabs';
+import { UrlServiceProvider } from '../../providers/url-service/url-service';
+import { UserProvider } from '../../providers/user/user';
 
 @IonicPage()
 @Component({
@@ -14,35 +16,52 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage {
 	loginForm: FormGroup;
 	loginError: string;
-
+    profile = {};
 	constructor(
 		private navCtrl: NavController,
-		// private auth: AuthService,
-		fb: FormBuilder
+        private urlServiceProvider: UrlServiceProvider,
+        private userProvider: UserProvider,
+		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
-			email: ['', Validators.compose([Validators.required, Validators.email])],
+
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
+
+			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-		});
-	}
+        })
+    }
+
 
   login() {
+
 		// let data = this.loginForm.value;
         //
-		// if (!data.email) {
+		// if (!data.phoneNumber) {
 		// 	return;
 		// }
         //
 		// let credentials = {
-		// 	email: data.email,
+		// 	phoneNumber: data.phoneNumber,
 		// 	password: data.password
 		// };
-		// this.auth.signInWithEmail(credentials)
+		// this.auth.signInWithPhonenumber(credentials)
 		// 	.then(
 		// 		() => this.navCtrl.setRoot(HomePage),
 		// 		error => this.loginError = error.message
 		// 	);
         this.navCtrl.push(TabsPage);
+
+      // 4085551234
+      try {
+          let phone = this.loginForm.value.phone;
+          this.urlServiceProvider.setPhoneNumber(phone);
+          this.navCtrl.push(TabsPage);
+      } catch {
+
+      }
+
     }
 
   signup(){

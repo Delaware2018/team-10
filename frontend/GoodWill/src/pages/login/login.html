@@ -1,17 +1,15 @@
-<ion-header>
-	<ion-navbar>
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title>Log in</ion-title>
-	</ion-navbar>
-</ion-header>
 
-<ion-content>
+
+<ion-content padding class = "bg-image">
+	<img src="../assets/imgs/goodPic.png" alt="" class = "center">
 	<form (ngSubmit)="login()" [formGroup]="loginForm">
 		<ion-list inset>
 			<ion-item>
-				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+<<<<<<< HEAD
+				<ion-input type="text" placeholder="Phone Number" formControlName="phoneNumber"></ion-input>
+=======
+					<ion-input [(ngModel)]="profile.phoneNumber" type="number" placeholder="Phone Number" formControlName="phone"></ion-input>
+>>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
 			</ion-item>
 
 			<ion-item>
@@ -21,7 +19,10 @@
 
 		<div padding-horizontal>
 
+<<<<<<< HEAD
 			<button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
+=======
+			<button ion-button full type="submit" (click)="login(phoneNumber)">Log in</button>
 			<div class="login-footer">
 				<p>
 					<a href="#">Forgot password?</a>
@@ -30,12 +31,13 @@
 			</div>
 
 			<ion-list>
+>>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
 
-				<button ion-button icon-left block clear (click)="signup()">
-					<ion-icon name="person-add"></ion-icon>
-					Sign up
-				</button>
-			</ion-list>
 		</div>
 	</form>
+	<footer>
+		<button ion-button icon-left block clear (click)="signup()">
+		 <strong>REGISTER </strong>
+	 </button>
+	</footer>
 </ion-content>
