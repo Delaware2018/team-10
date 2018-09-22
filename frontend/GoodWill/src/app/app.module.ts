@@ -18,6 +18,7 @@ import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { RewardsProvider } from '../providers/rewards/rewards';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
     UrlServiceProvider,
-    DonationsProvider
+    DonationsProvider,
+    RewardsProvider
   ]
 })
 export class AppModule {}

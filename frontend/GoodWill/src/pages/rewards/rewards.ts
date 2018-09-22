@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { UserProvider } from '../../providers/user/user';
+import { RewardsProvider } from '../../providers/rewards/rewards';
 
 @Component({
   selector: 'page-rewards',
@@ -7,11 +9,31 @@ import { NavController } from 'ionic-angular';
 })
 export class RewardsPage {
 
-  constructor(public navCtrl: NavController) {
+    rewards = []
+    profile = {}
 
+  constructor(public navCtrl: NavController, public userProvider : UserProvider, public rewardsProvider: RewardsProvider) {
+      this.rewardsProvider.getRewards()
+      .then(data => {
+          console.log(data);
+          this.rewards = data;
+      })
+
+      this.userProvider.getProfile()
+      .then(data=> {
+          console.log(data);
+          this.profile = data;
+      })
   }
 
-  redeem(){
+  redeem(points){
+      this.rewardsProvider.addPoints(-points).then(data=> {
+          this.userProvider.getProfile()
+          .then(data=> {
+              console.log(data);
+              this.profile = data;
+          })
+      })
       console.log("You redeemed a giftcard");
   }
 
