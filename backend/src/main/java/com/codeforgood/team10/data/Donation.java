@@ -16,16 +16,23 @@ public class Donation {
     private String location;
     @JsonFormat(pattern="MM/dd/yyyy")
     private Date date;
-    private long userID;
+    private long phoneNumber;
     private String item;
     private int quantity;
     private float price;
 
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
 
     public Donation () {}
-    public Donation(String location, Date date, String item, long id, int quantity, float price) {
+    public Donation(String location, Date date, String item, int quantity, float price) {
         this.location = location;
-        this.id = id;
         this.date = date;
         this.item = item;
         this.quantity = quantity;
@@ -64,13 +71,6 @@ public class Donation {
         this.id = id;
     }
 
-    public long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(long userID) {
-        this.userID = userID;
-    }
 
     public String getLocation() {
         return location;
