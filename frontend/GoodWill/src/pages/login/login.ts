@@ -24,21 +24,29 @@ export class LoginPage {
 		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
-			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
         })
     }
 
 
   login() {
-      // 4085551234
-      try {
-          let phone = this.loginForm.value.phone;
-          this.urlServiceProvider.setPhoneNumber(phone);
-          this.navCtrl.push(TabsPage);
-      } catch(error) {
-          console.log(error);
-      }
+		// let data = this.loginForm.value;
+        //
+		// if (!data.phoneNumber) {
+		// 	return;
+		// }
+        //
+		// let credentials = {
+		// 	phoneNumber: data.phoneNumber,
+		// 	password: data.password
+		// };
+		// this.auth.signInWithPhonenumber(credentials)
+		// 	.then(
+		// 		() => this.navCtrl.setRoot(HomePage),
+		// 		error => this.loginError = error.message
+		// 	);
+        this.navCtrl.push(TabsPage);
     }
 
   signup(){

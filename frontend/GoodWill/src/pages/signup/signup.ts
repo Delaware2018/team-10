@@ -17,8 +17,12 @@ export class SignupPage {
     	// private auth: AuthService
 	) {
 		this.form = fb.group({
-			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+			phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			email: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			dob: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+			income: ['', Validators.compose([Validators.required, Validators.minLength(0)])],
+			familySize: ['', Validators.compose([Validators.required, Validators.minLength(2)])]
 		});
 		// this.form.valid = false;
   }
@@ -26,7 +30,7 @@ export class SignupPage {
   signup() {
 		// let data = this.form.value;
 		// let credentials = {
-		// 	email: data.email,
+		// 	phoneNumber: data.phoneNumber,
 		// 	password: data.password
 		// };
 		// this.auth.signUp(credentials).then(
