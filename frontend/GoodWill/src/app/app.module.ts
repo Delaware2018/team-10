@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
+import { DonationsProvider } from '../providers/donations/donations';
 
 @NgModule({
   declarations: [
@@ -43,14 +44,16 @@ import { UrlServiceProvider } from '../providers/url-service/url-service';
     StoriesPage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DonationsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
-    UrlServiceProvider
+    UrlServiceProvider,
+    DonationsProvider
   ]
 })
 export class AppModule {}

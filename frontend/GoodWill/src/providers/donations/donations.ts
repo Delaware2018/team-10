@@ -4,21 +4,21 @@ import { UrlServiceProvider } from '../url-service/url-service';
 import 'rxjs/Rx';
 
 /*
-Generated class for the UserProvider provider.
+Generated class for the DonationsProvider provider.
 
 See https://angular.io/guide/dependency-injection for more info on providers
 and Angular DI.
 */
 @Injectable()
-export class UserProvider {
+export class DonationsProvider {
 
     constructor(public http: Http, public urlServiceProvider :UrlServiceProvider) {
-        console.log('Hello UserProvider Provider');
+        console.log('Hello DonationsProvider Provider');
     }
 
-    getProfile() {
+    getDonations() {
         return new Promise(resolve => {
-            var profileUrl = this.urlServiceProvider.build('/user/get');
+            var donationsUrl = this.urlServiceProvider.build('/donation/findDonations');
             let opt:RequestOptions;
             let headers:Headers = new Headers;
 
@@ -30,13 +30,12 @@ export class UserProvider {
 
             console.log(this.urlServiceProvider.getPhoneNumber())
 
-            this.http.get(profileUrl, opt)
-            .map(res => res.json())
-            .subscribe(data => {
-                resolve(data);
-            }
-        );
-    });
-
-}
+            this.http.get(donationsUrl, opt)
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                }
+            );
+        });
+    }
 }

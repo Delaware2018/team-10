@@ -15,6 +15,7 @@ export class ProfilePage {
       .then(data=> {
           console.log(data);
           this.profile = data;
-      })  }
+      })
+  }
 
 }
