@@ -17,13 +17,10 @@ import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
 import { TimeAgoPipe } from 'time-ago-pipe';
-<<<<<<< HEAD
 import { MakeDonationPage } from '../pages/make-donation/make-donation'
-=======
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { RewardsProvider } from '../providers/rewards/rewards';
 
->>>>>>> fd0bd00ae71c05211db1af2333e13ae264841b7c
 @NgModule({
   declarations: [
     MyApp,

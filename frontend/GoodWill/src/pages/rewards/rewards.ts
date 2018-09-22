@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-<<<<<<< HEAD
 import { DonationsPage } from '../donations/donations';
 import { MakeDonationPage } from '../make-donation/make-donation';
-=======
 import { UserProvider } from '../../providers/user/user';
 import { RewardsProvider } from '../../providers/rewards/rewards';
->>>>>>> fd0bd00ae71c05211db1af2333e13ae264841b7c
 
 @Component({
   selector: 'page-rewards',
