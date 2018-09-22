@@ -26,7 +26,7 @@ export class DonationsProvider {
                 headers:headers
             })
 
-            headers.set('phoneNumber', this.urlServiceProvider.getPhoneNumber());
+            headers.set('phoneNumber', this.urlServiceProvider.getPhoneNumber().toString());
 
             console.log(this.urlServiceProvider.getPhoneNumber())
 
