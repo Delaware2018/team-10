@@ -53,8 +53,8 @@ public class DonationController {
 //        Date[] dates = { new Date("09/21/18"), new Date("05/20/18"), new Date("09/27/18"), new Date("04/17/18"), new Date("08/13/18"),
 //                new Date("06/04/18"), new Date("07/19/18"), new Date("03/30/18")};
 
-        LocalDate startDate = new LocalDate(2018, 2, 1);
-        LocalDate endDate = new LocalDate(2018, 9, 23);
+        LocalDate startDate = new LocalDate(2018, 3, 11);
+        LocalDate endDate = new LocalDate(2018, 3, 20);
 
         int days = Days.daysBetween(startDate, endDate).getDays();
         List<Date> dates = new ArrayList<>(days);  // Set initial capacity to `days`.
@@ -74,11 +74,11 @@ public class DonationController {
                 a.setPhoneNumber(numbers[rand2]);
 
                 donationRepository.save(a);
-
+                System.out.println(a.getDate().toString());
                 HttpClient httpclient = HttpClients.createDefault();
                 HttpPost httppost = new HttpPost("http://localhost:31311");
                 httppost.addHeader("content-type", "application/json");
-                String json = String.format("{\"firstName\": \"%s\", \"lastName\": \"%s\", \"age\": %d, \"date\": \"%s\", \"item\": \"%s\", \"location\": \"%s\", \"phoneNumber\": %d, \"price\": %f, \"quantity\": %d}", firstNames[rand2], lastNames[rand2], ages[rand2], a.getDate(), a.getItem(), a.getLocation(), a.getPhoneNumber(), a.getPrice(), a.getQuantity());
+                String json = String.format("{\"firstName\": \"%s\", \"lastName\": \"%s\", \"age\": %d, \"date\": \"%s\", \"item\": \"%s\", \"location\": \"%s\", \"phoneNumber\": %d, \"price\": %f, \"quantity\": %d}", firstNames[rand2], lastNames[rand2], ages[rand2], a.getDate().toString(), a.getItem(), a.getLocation(), a.getPhoneNumber(), a.getPrice(), a.getQuantity());
                 try {
                     httppost.setEntity(new StringEntity(json));
                     httpclient.execute(httppost);
