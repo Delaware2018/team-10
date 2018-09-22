@@ -21,17 +21,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long phoneNumber;
-    private String password;
     private String email;
     private String firstName;
     private String lastName;
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern="MM/dd/yyyy")
     private Date dateOfBirth;
     private String income;
     private String ethnicity;
     private int familySize;
     private boolean pet;
-    private int points = 0;
+    private int points;
 
     public User () {}
 
@@ -128,19 +127,8 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getPoints() {
-        return points;
-    }
+    public int getPoints() { return points; }
 
-    public void setPoints(int points) {
-        this.points = points;
-    }
+    public void setPoints() { this.points = points; }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
