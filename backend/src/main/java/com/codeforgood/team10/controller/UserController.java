@@ -17,16 +17,13 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(path = "/test")
-    public String test() {
-        return "hello";
-    }
     @PostMapping(path = "/create")
     public void createUser(@RequestBody User user) {
         userRepository.save(user);
     }
 
-    public User findUserById(long id) {
-        return userRepository.findById(id);
+    @GetMapping(path = "/get", produces = "application/json")
+    public User getUser(@RequestHeader(value="phoneNumber") long phoneNumber) {
+        return userRepository.findByPhoneNumber(phoneNumber);
     }
 }

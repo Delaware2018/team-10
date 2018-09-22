@@ -1,7 +1,7 @@
 package com.codeforgood.team10.data;
 
 
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,16 +14,19 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String location;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private Date date;
     private long userID;
     private String item;
     private int quantity;
     private float price;
 
+
+    public Donation () {}
     public Donation(String location, Date date, String item, long id, int quantity, float price) {
         this.location = location;
+        this.id = id;
         this.date = date;
-        this.userID = id;
         this.item = item;
         this.quantity = quantity;
         this.price = price;
