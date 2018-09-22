@@ -1,3 +1,9 @@
 page-stories {
     @include background-image;
+    div{
+    text-align: center;
+    }
+    p {
+    text-align: center;
+    }
 }
