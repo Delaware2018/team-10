@@ -33,6 +33,16 @@
                 <ion-col col-4 class="stat">{{ numberOfDonations }}</ion-col>
                 <ion-col col-4 class="stat">$ {{ moneyDonated }}</ion-col>
             </ion-row>
+            <ion-row>
+                <ion-col col-4>DATE OF BIRTH</ion-col>
+                <ion-col col-4>INCOME</ion-col>
+                <ion-col col-4>ETHNICITY</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-4 class="stat">{{ profile.dateOfBirth }}</ion-col>
+                <ion-col col-4 class="stat">{{ profile.income }}</ion-col>
+                <ion-col col-4 class="stat">{{ profile.ethnicity }}</ion-col>
+            </ion-row>
         </ion-grid>
     </ion-card>
 </ion-content>
