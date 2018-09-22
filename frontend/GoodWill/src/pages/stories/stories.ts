@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DonationsPage } from '../donations/donations';
 
 @Component({
   selector: 'page-stories',
@@ -11,4 +12,7 @@ export class StoriesPage {
 
   }
 
+  donate(){
+      this.navCtrl.push(DonationsPage);
+  }
 }
