@@ -2,6 +2,8 @@ package com.codeforgood.team10.data;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
