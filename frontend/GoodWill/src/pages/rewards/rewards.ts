@@ -11,4 +11,8 @@ export class RewardsPage {
 
   }
 
+  redeem(){
+      console.log("You redeemed a giftcard");
+  }
+
 }
