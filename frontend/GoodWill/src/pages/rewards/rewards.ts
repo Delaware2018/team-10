@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DonationsPage } from '../donations/donations';
+import { MakeDonationPage } from '../make-donation/make-donation';
 
 @Component({
   selector: 'page-rewards',
@@ -12,6 +13,6 @@ export class RewardsPage {
 
   }
   donate(){
-      this.navCtrl.push(DonationsPage);
+      this.navCtrl.push(MakeDonationPage);
   }
 }

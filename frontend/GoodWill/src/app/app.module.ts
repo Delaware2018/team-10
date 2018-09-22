@@ -17,7 +17,7 @@ import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
 import { TimeAgoPipe } from 'time-ago-pipe';
-
+import { MakeDonationPage } from '../pages/make-donation/make-donation'
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +29,8 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     TabsPage,
     LoginPage,
     SignupPage,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MakeDonationPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,8 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     TabsPage,
     LoginPage,
     SignupPage,
-    DonationsPage
+    DonationsPage,
+    MakeDonationPage
   ],
   providers: [
     StatusBar,
