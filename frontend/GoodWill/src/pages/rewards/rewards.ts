@@ -38,6 +38,14 @@ export class RewardsPage {
       })
       console.log("You redeemed a giftcard");
   }
+
+  ionViewDidEnter() {
+      this.userProvider.getProfile()
+      .then(data=> {
+          console.log(data);
+          this.profile = data;
+      })
+  }
   donate(){
       this.navCtrl.push(MakeDonationPage);
   }

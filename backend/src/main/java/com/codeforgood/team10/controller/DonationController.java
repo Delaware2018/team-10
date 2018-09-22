@@ -42,6 +42,12 @@ public class DonationController {
         return donationRepository.findAllByPhoneNumber(phoneNumber);
     }
 
+    @GetMapping(path = "/size")
+    public int getDonations(@RequestHeader(value="phoneNumber") long phoneNumber) {
+        List<Donation> list = donationRepository.findAllByPhoneNumber(phoneNumber);
+        return list.size();
+    }
+
     @GetMapping(path = "/generate")
     public void generate() {
         String[] types = {"shirt", "shorts", "jeans", "dresses", "pillow", "dresser w/mirror", "lamp", "monitor", "puzzles", "shoes"};

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import { RewardsProvider} from '../../providers/rewards/rewards';
+import { DonationsProvider} from '../../providers/donations/donations';
 /**
  * Generated class for the MakeDonationPage page.
  *
@@ -16,11 +17,17 @@ import { AlertController } from 'ionic-angular';
 })
 export class MakeDonationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    amount = 0;
+  constructor(public donationsProvider: DonationsProvider, public rewardsProvider: RewardsProvider, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
+  donate(value) {
+      this.amount = value;
+  }
   submitDonation() {
   console.log("I ran");
+  this.donationsProvider.addMoneyDonated(this.amount);
+  this.amount=0;
   let alert = this.alertCtrl.create({
       title: 'Thank you for donating!',
       subTitle: 'We <3 You',
@@ -33,6 +40,7 @@ export class MakeDonationPage {
       }]
     });
     alert.present();
+    this.rewardsProvider.addPoints(200);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MakeDonationPage');

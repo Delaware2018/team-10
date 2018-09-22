@@ -17,10 +17,10 @@
     <ion-slides pager text-center>
 
         <ion-slide *ngFor="let reward of rewards">
-            <h1 *ngIf="reward?.name">{{reward.name}}</h1>
+            <h1 *ngIf="reward?.name">{{reward.name}} - {{reward.cost}} points</h1>
             <circle-progress *ngIf="reward?.cost"
             [percent]="profile.points"
-            [maxPercent]="reward.cost"
+            [maxPercent]="profile.points"
             [radius]="50"
             [outerStrokeWidth]="16"
             [innerStrokeWidth]="0"

@@ -17,11 +17,11 @@
 
 <ion-content padding>
 
-  <button class="button button2 center" ion-button >$5</button>
-  <button class="button button2 center" ion-button >$25</button>
-  <button class="button button2 center" ion-button >$50</button>
-  <button class="button button2 center" ion-button >$100</button>
-  <button class="button button2 center" ion-button >other</button>
+  <button class="button button2 center" ion-button (click)="donate(5)">$5</button>
+  <button class="button button2 center" ion-button (click)="donate(25)">$25</button>
+  <button class="button button2 center" ion-button (click)="donate(50)">$50</button>
+  <button class="button button2 center" ion-button (click)="donate(100)">$100</button>
+  <button class="button button2 center" ion-button (click)="donate(200)">other</button>
 
   <ion-row>
      <ion-col>
