@@ -15,7 +15,15 @@
 
 		<div padding-horizontal>
 
-			<button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
+			<button ion-button full type="submit" (click)="login(phoneNumber)">Log in</button>
+			<div class="login-footer">
+				<p>
+					<a href="#">Forgot password?</a>
+					If you're a new user, please sign up.
+				</p>
+			</div>
+
+			<ion-list>
 
 		</div>
 	</form>
