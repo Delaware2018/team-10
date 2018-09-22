@@ -16,9 +16,8 @@ Ionic pages and navigation.
 <ion-content padding>
     <ul>
         <li ng-repeat="donation in donations">
-            {{ donation.name }}
+            <span *ngIf="donation?.name">{{ donation.name }}</span>
         </li>
     </ul>
-
 
 </ion-content>
