@@ -30,6 +30,7 @@ public class User {
     private String ethnicity;
     private int familySize;
     private boolean pet;
+    private int points;
 
     public User () {}
 
@@ -43,6 +44,7 @@ public class User {
         this.ethnicity = ethnicity;
         this.familySize = familySize;
         this.pet = pet;
+        this.points = 0;
     }
 
     public long getId() {
@@ -124,4 +126,9 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public int getPoints() { return points; }
+
+    public void setPoints() { this.points = points; }
+
 }
