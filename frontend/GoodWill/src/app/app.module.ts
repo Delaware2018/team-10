@@ -32,7 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    ProfilePage,
     TabsPage,
     LoginPage,
     SignupPage
