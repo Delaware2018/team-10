@@ -13,7 +13,7 @@ export class DonationsPage {
 
     constructor(public navCtrl: NavController, public donationsProvider: DonationsProvider) {
         this.donationsProvider.getDonations()
-        .then(data=> {
+        .then(data => {
             this.donations = data;
             console.log(this.donations);
         })
