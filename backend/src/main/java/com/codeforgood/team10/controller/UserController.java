@@ -22,7 +22,8 @@ public class UserController {
         userRepository.save(user);
     }
 
-    public User findUserById(long id) {
-        return userRepository.findById(id);
+    @GetMapping(path = "/get", produces = "application/json")
+    public User getUser(@RequestHeader(value="phoneNumber") long phoneNumber) {
+        return userRepository.findByPhoneNumber(phoneNumber);
     }
 }
