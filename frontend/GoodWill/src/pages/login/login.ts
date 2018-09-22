@@ -58,8 +58,8 @@ export class LoginPage {
           let phone = this.loginForm.value.phone;
           this.urlServiceProvider.setPhoneNumber(phone);
           this.navCtrl.push(TabsPage);
-      } catch {
-
+      } catch(error) {
+          console.log(error);
       }
 
     }
