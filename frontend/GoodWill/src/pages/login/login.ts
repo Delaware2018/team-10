@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 // import { AuthService } from '../../services/auth.service';
 import { SignupPage } from '../signup/signup';
 import { TabsPage } from '../tabs/tabs';
+import { UrlServiceProvider } from '../../providers/url-service/url-service';
+import { UserProvider } from '../../providers/user/user';
 
 @IonicPage()
 @Component({
@@ -14,19 +16,26 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage {
 	loginForm: FormGroup;
 	loginError: string;
-
+    profile = {};
 	constructor(
 		private navCtrl: NavController,
-		// private auth: AuthService,
-		fb: FormBuilder
+        private urlServiceProvider: UrlServiceProvider,
+        private userProvider: UserProvider,
+		private fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
+<<<<<<< HEAD
 			phoneNumber: ['', Validators.compose([Validators.required, Validators.phoneNumber])],
+=======
+			phone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+>>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-		});
-	}
+        })
+    }
+
 
   login() {
+<<<<<<< HEAD
 		// let data = this.loginForm.value;
         //
 		// if (!data.phoneNumber) {
@@ -43,6 +52,16 @@ export class LoginPage {
 		// 		error => this.loginError = error.message
 		// 	);
         this.navCtrl.push(TabsPage);
+=======
+      // 4085551234
+      try {
+          let phone = this.loginForm.value.phone;
+          this.urlServiceProvider.setPhoneNumber(phone);
+          this.navCtrl.push(TabsPage);
+      } catch {
+
+      }
+>>>>>>> 22165c1d4eedde6c2643e3892630309bdc2caf63
     }
 
   signup(){
