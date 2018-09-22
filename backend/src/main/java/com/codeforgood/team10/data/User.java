@@ -129,6 +129,6 @@ public class User {
 
     public int getPoints() { return points; }
 
-    public void setPoints() { this.points = points; }
+    public void setPoints(int points) { this.points = points; }
 
 }
