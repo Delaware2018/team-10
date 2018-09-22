@@ -1,8 +1,12 @@
 package com.codeforgood.team10.data;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import java.util.Date;
 
 /**
@@ -13,9 +17,11 @@ import java.util.Date;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private int phoneNumber;
     private String email;
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private Date dateOfBirth;
     private String income;
     private String ethnicity;
