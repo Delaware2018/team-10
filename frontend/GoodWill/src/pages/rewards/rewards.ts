@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DonationsPage } from '../donations/donations';
+import { MakeDonationPage } from '../make-donation/make-donation';
 import { UserProvider } from '../../providers/user/user';
 import { RewardsProvider } from '../../providers/rewards/rewards';
 
@@ -36,5 +38,7 @@ export class RewardsPage {
       })
       console.log("You redeemed a giftcard");
   }
-
+  donate(){
+      this.navCtrl.push(MakeDonationPage);
+  }
 }

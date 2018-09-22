@@ -17,6 +17,7 @@ import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { MakeDonationPage } from '../pages/make-donation/make-donation'
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { RewardsProvider } from '../providers/rewards/rewards';
 
@@ -31,7 +32,8 @@ import { RewardsProvider } from '../providers/rewards/rewards';
     TabsPage,
     LoginPage,
     SignupPage,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MakeDonationPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { RewardsProvider } from '../providers/rewards/rewards';
     TabsPage,
     LoginPage,
     SignupPage,
-    DonationsPage
+    DonationsPage,
+    MakeDonationPage
   ],
   providers: [
     StatusBar,

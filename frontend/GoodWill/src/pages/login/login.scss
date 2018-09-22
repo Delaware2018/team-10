@@ -1,29 +1,26 @@
 page-login {
-    @include background-image;
-}
+  footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: #144788;
+      text-align: center;
+  }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: #144788;
-    text-align: center;
-}
+  .bg-image{
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: fill;
 
-.bg-image{
+          background-color: #144788;
+  }
 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: fill;
-
-        background-color: #144788;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
 }
