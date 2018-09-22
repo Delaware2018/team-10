@@ -33,7 +33,8 @@ public class RewardController {
             userRepository.save(user);
 
             return true;
-    }
+        }
+
 
 
     @PostMapping(path = "/create")
