@@ -1,3 +1,8 @@
 page-rewards {
-
+    @include background-image;
+    circle-progress {
+        position: absolute;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
 }

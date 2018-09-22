@@ -17,6 +17,7 @@ import { UserProvider } from '../providers/user/user';
 import { UrlServiceProvider } from '../providers/url-service/url-service';
 import { DonationsProvider } from '../providers/donations/donations';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,15 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+     NgCircleProgressModule.forRoot({
+       radius: 100,
+       outerStrokeWidth: 16,
+       innerStrokeWidth: 8,
+       outerStrokeColor: "#78C000",
+       innerStrokeColor: "#C7E596",
+       animationDuration: 300
+     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
